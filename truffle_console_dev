@@ -1,0 +1,25 @@
+> balance = await web3.eth.getBalance('0x07BB41Df8C1d275c4259CdD0dBf0189d6a9a5F32') 
+> balance
+> '4851806707375149300'
+> const account = '0x07BB41Df8C1d275c4259CdD0dBf0189d6a9a5F32' 
+> balance = await web3.eth.getBalance(account) 
+> balance
+> web3.utils.fromWei(balance) 
+> web3.eth.accounts.create() 
+{ address: '0x4e44aFbD90AE0b307e03fF10152d61BC45431106',
+  privateKey: '0xc4189b8c6b005025bd6058b3c95756739732449af824a6918435a11912bc8eb2',
+  signTransaction: [Function: signTransaction],
+  sign: [Function: sign],
+  encrypt: [Function: encrypt] }
+> const recipient = '0x4e44aFbD90AE0b307e03fF10152d61BC45431106' 
+> balance = await web3.eth.getBalance(recipient) 
+> balance
+> const sender = '0x07BB41Df8C1d275c4259CdD0dBf0189d6a9a5F32' 
+> balance = await web3.eth.getBalance(sender) 
+> balance 
+> await web3.eth.sendTransaction({ from: sender, to: recipient, value: web3.utils.toWei('1', 'ether') }) 
+> balance = await web3.eth.getBalance(recipient) 
+> balance
+> balance = await web3.eth.getBalance(sender) 
+> balance 
+
